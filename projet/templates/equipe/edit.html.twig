@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier l'équipe {% endblock %}
+
+{% block body %}
+	<div class="globalAjout">
+		<div class="titreAjout">
+			Modifier l'équipe
+		</div>
+		<div class="ajoutForm">
+		
+			{{ form_start(form) }}
+
+			<span class="test">{{ form_label(form.nom_equipe) }} &ensp;&nbsp; {{ form_widget(form.nom_equipe) }}</span>
+			<br /><br />
+
+			<span>{{ form_label(form.etudiantEquipe) }} {{ form_widget(form.etudiantEquipe) }} </span>
+			<br /><br />
+			
+			<span>{{ form_label(form.enseignantEquipe) }} {{ form_widget(form.enseignantEquipe) }} </span>
+			{{ form_widget(form) }}
+				<button style="margin-left:80%;">{{ button_label|default('Modifier') }}</button>
+			{{ form_end(form) }}
+		</div>
+	</div>
+{% endblock %}

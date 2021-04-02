@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post
+{% endblock %}
+
+{% block body %}
+	
+	{% if 'ROLE_ETUDIANT' in app.user.roles %}
+		{% set nom = app.user.prenomEtudiant ~ ' ' ~ app.user.nomEtudiant %}
+	{% else %}
+		{% set nom = app.user.prenomEnseignant ~ ' ' ~ app.user.nomEnseignant %}
+	{% endif %}
+
+	<div class="retour">
+		<a href="{{ path('journal_de_bord_show') }}" style="display: block;">◀ vers le jdb</a>
+	</div>
+	<div class="globalSHOWPOST">
+		<div class="equipePOST">
+			{{ post.jdbPost.equipeJDB }}
+		</div>
+		
+		<div class="nomPOST">
+			<span class="nomPOST">{{ post.nomPost }}</td>
+		</span>
+		<span class="datePOST">{{ post.datePost ? post.datePost|localizeddate('full', 'none', NULL) : ''  }}
+			&nbsp;</span>
+	</div>
+	<br/>
+	<div class="textePOST">
+		{{ post.texte|nl2br }}
+	</div>
+	{% if 'ROLE_ETUDIANT' in app.user.roles %}
+	<div class="modifierSupprimer">
+		<a href="{{ path('post_edit', {'id': post.id}) }}"><span>Modifier </span></a>			
+				<form method="post" action="{{ path('post_delete', {'id': post.id}) }}" onsubmit="return confirm('Voulez vous supprimer ce Post ?');">
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ post.id) }}">
+						<button>Supprimer</button>
+				</form> 
+			</span>
+	</div>
+	{% endif %}
+	{% if post.DocumentPost %}
+		<br/>
+		<div class="doc">
+			Fichier :<a href="{{ asset('Fichier/' ~ post.DocumentPost.nom ~ '') }}"><img src="/Images/logoPDF.png" width="60px"></a>
+		</div>
+	{% endif %}
+
+
+	<h2 style="width:82%;text-align:left;color:black;">Commentaires :</h2>
+	{% if commentaire %}
+		{% for com in commentaire %}
+			<span style="width:82%;text-align:left;color:black;">Posté par :
+				{{ com.posteur }}</span>
+			<div class="commentaire">
+				{{ com.texte }}
+			</div>
+			{% if nom == com.posteur %}
+				<form method="post" action="{{ path('post_delete', {'id': com.id}) }}" onsubmit="return confirm('Voulez vous supprimer ce commentaire ?');">
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ com.id) }}">
+					<button class="btn">Supprimer</button>
+				</form>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		<h3 style="width:82%;text-align:center;color:black;">Pas de commentaires !</h3>
+	{% endif %}
+
+
+	<div class="nouveauCommentaire">
+		<h2 style="width:100%;text-align:left;color:black;">
+			Poster un nouveau commentaire :
+		</h2>
+		{{ form_start(form) }}
+		{{ form_row(form.commentaire) }}
+		{{ form_widget(form) }}
+		<button class="btn">{{ button_label|default('Envoyer') }}</button>
+		{{ form_end(form) }}
+	</div>
+
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+{% endblock %}

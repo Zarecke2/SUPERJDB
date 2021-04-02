@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des étudiants !{% endblock %}
+
+{% block body %}
+    <div class="globalAjout">
+        <div class="titreAjout">
+			Liste des étudiants
+		</div>
+    
+        {% for etudiant in etudiants %}
+        <div class="generalListe">
+            {{ etudiant.nomEtudiant }}
+            {{ etudiant.prenomEtudiant }}  
+        </div>
+        <div class="button">
+            <form method="post" action="{{ path('etudiant_delete', {'id': etudiant.id}) }}" onsubmit="return confirm('Voulez vous supprimer cet étudiant ?');">
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ etudiant.id) }}">
+						<button>Supprimer</button>
+				</form> 
+            <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">Modifier</a>
+        </div>
+        
+        {% else %}
+        {% endfor %}
+    </div>
+
+{% endblock %}

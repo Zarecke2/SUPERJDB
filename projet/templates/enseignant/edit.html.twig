@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un enseignant {% endblock %}
+
+{% block body %}
+	<div class="globalAjout">
+		<div class="titreAjout">
+			Modifier l'enseignant
+		</div>
+		<div class="ajoutForm">
+		
+			{{ form_start(form) }}
+
+			<span class="test">{{ form_label(form.nom_enseignant) }} &ensp;&nbsp; {{ form_widget(form.nom_enseignant) }}</span>
+			<br /><br />
+
+			<span>{{ form_label(form.prenom_enseignant) }} {{ form_widget(form.prenom_enseignant) }} </span>
+			<br /><br />
+			
+			<span>{{ form_label(form.administrateur) }} {{ form_widget(form.administrateur) }} </span>
+			{{ form_widget(form) }}
+				<button style="margin-left:80%;">{{ button_label|default('Ajouter') }}</button>
+			{{ form_end(form) }}
+
+			<a href="{{ path('mdp', {'id': enseignant.id, 'nom': enseignant.nomEnseignant}) }}">
+                <button style="margin-left:5%;">
+                    Modifier le mot de passe
+                </button>
+            </a> 
+		</div>
+	</div>
+{% endblock %}

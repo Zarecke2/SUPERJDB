@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe index
+{% endblock %}
+
+{% block body %}
+
+	<div class="jdbIndex">
+		<div class="titreIndex">
+			Équipes
+		</div>
+		{% for equipe in equipes %}
+        {% set etudiant = equipe.etudiantEquipe %}
+			<div class="listeJDB">
+				<a href="{{ path('equipe_show', {'id': equipe.id}) }}">
+                    <div class="nomEtJdb">
+					    <span>{{ equipe.nomEquipe }}</span> <span> {{ equipe.jdbEquipe }} </span>
+                    </div>
+                        <span>
+                            {% for e in etudiant %}
+                                {{ e.nomEtudiant }} {{ e.prenomEtudiant }}
+                            {% else %}
+                            Pas d'étudiants !
+                            {% endfor %}
+
+                        </span>
+                        <br />
+                        <span> Enseignant : {{ equipe.enseignantEquipe }} </span>
+				</a>
+			</div>
+            <div class="button">
+            <form method="post" action="{{ path('equipe_delete', {'id': equipe.id}) }}" onsubmit="return confirm('Voulez vous supprimer cette Equipe ? Cela supprimera aussi le journal de bord de l\'équipe');">
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ equipe.id) }}">
+						<button>Supprimer</button>
+				</form> 
+            <a href="{{ path('equipe_edit', {'id': equipe.id}) }}">Modifier</a>
+        </div>
+        {% else %}
+			<div class="listeJDB">Pas d'équipe pour le moment !</div>
+		{% endfor %}
+        
+	</div>
+
+
+	<a href="{{ path('equipe_new') }}">Create new</a>
+
+	{% for message in app.session.flashbag.get('doublon') %}
+		<li>{{ message }}</li>
+	{% endfor %}
+{% endblock %}

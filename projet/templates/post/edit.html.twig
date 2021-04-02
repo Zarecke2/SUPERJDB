@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifir un Post{% endblock %}
+
+{% block body %}
+    <div class="newPOST">
+		<div class="titreNewPOST">
+			<span>Modifier un post</span>
+		</div>
+        <br>
+        
+		<div class="formPOST">
+        <br />
+        {{ form_start(form) }}
+            {{ form_row(form.titre) }}<br />
+            <span>Contenu :</span> {{ form_row(form.contenu) }}<br />
+            {{ form_row(form.fichier) }} <br />
+            
+            {{ form_widget(form) }}
+            <button class="btn">{{ button_label|default('Modifier') }}</button>
+		{{ form_end(form) }}
+        &nbsp;* : l'ajout de fichier n'est pas obligatoire
+		</div>
+	</div>  
+<br />
+<br />
+{% endblock %}

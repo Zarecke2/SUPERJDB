@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Post
+{% endblock %}
+
+{% block body %}
+	<div class="newPOST">
+		<div class="titreNewPOST">
+			<span>Ajouter un post</span>
+		</div>
+        <br>
+        
+        
+		<div class="formPOST">
+        <br />
+        {{ form_start(form) }}
+
+            <span>{{ form_label(form.titre) }} {{ form_widget(form.titre) }} </span>
+			<br />
+			<small style="font-size:small;">{{ form_errors(form.titre) }}</small>
+
+            <span>{{ form_label(form.contenu) }} {{ form_widget(form.contenu) }} </span>
+			<br />
+			<small style="font-size:small;">{{ form_errors(form.contenu) }}</small>
+            
+            
+            <span>{{ form_label(form.fichier) }} {{ form_widget(form.fichier) }} </span>
+			<br />
+			<small style="font-size:small;">{{ form_errors(form.fichier) }}</small>
+            
+            {{ form_widget(form) }}
+            <button class="btn">{{ button_label|default('Ajouter') }}</button>
+		{{ form_end(form) }}
+        &nbsp;* : l'ajout de fichier n'est pas obligatoire, il doit être un fichier pdf 
+		</div>
+	</div>  
+<br />
+
+<br />
+<br />
+<br />
+
+{% endblock %}

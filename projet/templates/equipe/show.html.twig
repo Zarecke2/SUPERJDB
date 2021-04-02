@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe{% endblock %}
+
+{% block body %}
+    
+        <div class="jdbIndex">
+            <div class="titreIndex">
+                Voir l'équipe
+            </div>
+			<div class="listeJDB">
+				Membres de l'équipe : 
+				<ul>
+					{% for user in equipe.etudiantEquipe %}
+							<li style="font-size:large;"> {{ user }}</li>
+					{% else %}
+						Pas d'étudiant pour le moment !
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="listeJDB">
+				Professeur de l'équipe : {{ equipe.enseignantEquipe }}
+			</div>
+			<div class="listeJDB">
+				<a href="{{ path('journal_de_bord_show', {'id': equipe.jdbEquipe.id}) }}"> Vers le Journal </a>
+			</div>
+        </div>
+        
+{% endblock %}

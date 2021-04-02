@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JournalDeBord
+{% endblock %}
+
+{% block body %}
+
+	{% for m in app.flashes('access') %}
+		<script>
+		    function errorLoad() {
+		      alert("{{ m|e('js') }}");
+		    }
+	    </script>
+		<script>
+			errorLoad();
+		</script>
+	{% endfor %}
+
+	{% set etudiants = journal_de_bord.equipeJDB.etudiantEquipe %}
+	<div class="generalJDBSHOW">
+		
+		<div class="nomJDB">
+			<span class="titre">{{ journal_de_bord.nomJournal }}</span>
+			<span class="etudiant">
+				{% for etudiant in etudiants %}
+					{{ etudiant }} -
+				{% endfor %}
+			</span>
+		</div>
+
+		<br/>
+		{% if 'ROLE_ETUDIANT' in app.user.roles %}
+			<div class="nouveauPost">
+			<a href="{{ path('post_new')}}">
+				Ajouter un post
+			</a>
+		</div>
+		<br />
+		{% endif %}
+		{% for post in posts %}
+		
+			{% if post.commentaire == false %}
+			{% if post.lu == 0 and 'ROLE_ENSEIGNANT' in app.user.roles %}
+				<div class="listePost" style="background-color:gray;">
+			{% else %}
+				<div class="listePost">
+			{% endif %}
+					<span class="titre"><a href="{{ path('post_show', {'id': post.id})}}"> {{ post.nomPost }} </a> </span>
+					<span class="datePOST">{{ post.datePost ? post.datePost|localizeddate('full', 'none', NULL) : ''  }} &nbsp; </span>
+				</div>
+				<br>
+			{% endif %}
+		{% else %}
+			<div class="listePost">
+					<span class="titre"> Pas de post pour le moment  </span>
+				</div>
+				<br>
+		{% endfor %}
+		<br/>
+		
+
+	</div>
+{% endblock %}

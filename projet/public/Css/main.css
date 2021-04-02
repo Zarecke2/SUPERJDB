@@ -1,0 +1,707 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-image: url(/Images/background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed, scroll;
+    background-repeat: no-repeat, repeat-y;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.generalListe{
+    width: 60%;
+    text-align: center;
+    font-size: x-large;
+    min-width: 60%;
+    min-width: fit-content;
+    min-height: fit-content;
+    line-height: 60px;
+    margin-bottom: 5px;
+    
+
+    background-color: #8AABBE;
+    color: white;
+
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 15px 15px 15px;
+}
+
+
+.button{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.button a{
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #8AABBE;
+    font-size: large;
+}
+
+.button button{
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #8AABBE;
+    color:white;
+    font-size: large;
+}
+
+html a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* GÉNÉRAL */
+.header {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background-color: #586075;
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+div div.upjv {
+    height: 90%;
+    width: 15%;
+}
+
+div div.upjv .imageUPJV {
+    width: auto;
+    height: 100%;
+}
+
+div div.logo {
+    margin-top: 1%;
+    height: 100%;
+    width: fit-content;
+}
+
+div div.logo .imageLOGO {
+    width: auto;
+    height: 90%;
+}
+
+div div.utilisateur {
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+    color: white;
+}
+div div.utilisateur span{
+    height: auto;
+    font-size:x-large;
+    line-height: 30px;
+    padding: 0 1em;
+}
+
+div div.utilisateur span.img{
+    height: 60%;
+    font-size:x-large;
+    line-height: 30px;
+    padding: 0 1em;
+}
+
+div div.utilisateur .imageONOFF{
+    width: auto;
+    height: 100%;
+}
+
+div.left{
+    position: fixed;
+    top: 13%;
+    left: 0%;
+    background-color: #8AABBE;
+    width: 15%;
+    height: 87%;
+    z-index: 100;
+    overflow-y:auto;
+}
+
+div.left div.display{
+    margin: 15% auto;
+    width: 70%;
+    
+}
+
+div.left div.display button{
+    background-color: white;
+    width: 100%;
+    color: black;
+    font-size: large;
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px;
+}
+
+
+body{
+    margin-top: 7%;
+}
+
+
+/* FIN DE GÉNÉRAL  */
+
+/* LOGIN */
+
+div.globalConnexion{
+    margin: 15% auto ;
+    width: fit-content;
+}
+
+div.connexion{
+    border-color: gray;
+    border-style: solid;
+    border-width: 1.5px;
+    display: flex;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e98553;
+}
+
+div.connexion span{
+    width: 100%;
+    text-align: center;
+    font-size:xx-large;
+    color: white;
+}
+
+div.form{
+    border-style: solid;
+    border-width: 1.5px;
+    height: 100px;
+    width: 500px;
+    padding-top: 10px;
+    text-align: center;
+    font-size:x-large;
+    color: white;
+    border-color: gray;
+    background-color: #8AABBE;
+}
+
+div.form input[type=text], div.form input[type=password]{
+    width: 200px;
+    height: 20px;
+    
+}
+
+div.submit{
+    padding-top: 2%;
+    text-align: right;
+    
+}
+
+div.submit button{
+    background-color: #8AABBE;
+    color: white;
+    border-color: gray;
+    border-width: 1.5px;
+    font-size: x-large;
+}
+
+/* FIN DE LOGIN */
+
+/* JOURNAL DE BORD SHOW */
+
+div.generalJDBSHOW{
+    margin: 8% auto ;
+    width: 40%;
+}
+
+div.generalJDBSHOW div.nomJDB{
+    width: 100%;
+    height: 80px;
+    background-color: #e98553;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    
+}
+
+div.generalJDBSHOW div.nomJDB span.titre{
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: xx-large;
+}
+
+div.generalJDBSHOW div.nomJDB span.etudiant{
+    width: 100%;
+    font-size: x-large;
+    text-align: center;
+}
+
+div.generalJDBSHOW div.nouveauPost{
+    margin: 0 auto;
+    width: 50%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: transparent;
+    color: white;
+
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 15px 15px 15px;
+}
+
+div.generalJDBSHOW div.nouveauPost a{
+    line-height: 60px;
+    font-size: xx-large;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #e98553;
+}
+
+div.generalJDBSHOW div.listePost{
+    margin: 0 auto;
+    width: 80%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #8AABBE;
+    color: white;
+
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 15px 15px 15px;
+}
+
+div.generalJDBSHOW div.listePost > span{
+    width: 100%;
+}
+
+div.generalJDBSHOW div.listePost > span a{
+    width: 100%;
+    display: block;
+}
+
+div.generalJDBSHOW div.listePost > span.titre{
+    line-height: 60px;
+    font-size: xx-large;
+    text-align: center;
+}
+
+span.datePOST{
+    text-align: right;    
+}
+
+/* FIN DE JOURNAL DE BORD */
+
+/* SHOW POST */
+div.retour{
+    position:absolute;
+    width: fit-content;
+    margin-top: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    background-color: #8AABBE;
+    color: white;
+    border-radius: 15px 15px;
+    font-size: x-large;
+}
+
+div.retour a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+div.globalSHOWPOST{
+    margin: 0% auto ;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+div.globalSHOWPOST div.equipePOST{
+    background-color: #e98553;
+    width: 60%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 300%;
+    margin-bottom: 20px;
+}
+
+div.globalSHOWPOST div.nomPOST{
+    background-color: #8AABBE;
+    width: 40%;
+    height: fit-content;
+    padding-bottom: 10px;
+    flex-direction: column;
+    display: flex;
+    border-radius: 15px 15px;
+}
+
+div.globalSHOWPOST div.nomPOST span.nomPOST{
+    line-height: 60px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+div.globalSHOWPOST div.nomPOST span.datePOST{
+    line-height: 0px;
+    text-align: right;    
+}
+
+div.globalSHOWPOST div.textePOST{
+    padding: 10px;
+    height: 400px;
+    width: 80%;
+    background-color: white;
+    overflow-y:auto;
+    color: gray;
+    border-style: solid;
+    border-color: #8AABBE;
+    border-width: 4px;
+}
+
+div.globalSHOWPOST div.modifierSupprimer {
+    
+    background-color: transparent;
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+div.globalSHOWPOST div.modifierSupprimer a{
+    margin-top: 6px;
+    background-color: #8AABBE;
+    color: white;
+    font-size: x-large;
+    padding: 3px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+}
+
+div.globalSHOWPOST div.modifierSupprimer button{
+    margin-top: 5px;
+    background-color: #8AABBE;
+    color: white;
+    font-size: x-large;
+    padding: 3px;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+}
+
+div.textePOST::-webkit-scrollbar, textarea::-webkit-scrollbar, div.left::-webkit-scrollbar {
+    width: 15px;
+}
+
+div.textePOST::-webkit-scrollbar-track, textarea::-webkit-scrollbar-track, div.left::-webkit-scrollbar-track{
+    background-color: lightgray;
+} 
+
+div.textePOST::-webkit-scrollbar-thumb, textarea::-webkit-scrollbar-thumb, div.left::-webkit-scrollbar-thumb:hover{
+    background-color: rgb(168, 168, 168); 
+} 
+
+div.textePOST::-webkit-scrollbar-thumb:hover, textarea::-webkit-scrollbar-thumb:hover, div.left::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(97, 97, 97, 0.5); 
+} 
+
+div.globalSHOWPOST div.doc{
+    width: 80%;
+    text-align: right;
+    color: black;
+}
+
+div.globalSHOWPOST div.commentaire{
+    margin-left: 0.5%;
+    padding: 10px;
+    height: 150px;
+    width: 80%;
+    border-style: solid;
+    border-color: #8AABBE;
+    border-width: 4px;
+    background-color: white;
+    margin-bottom: 10px;
+    color: black;
+}
+
+div.globalSHOWPOST div.nouveauCommentaire{
+    margin-left: 0.5%;
+    padding: 10px;
+    height: 150px;
+    width: 80%;
+    margin-bottom: 10px;
+    color: black;
+}
+
+div.globalSHOWPOST div.nouveauCommentaire textarea{
+    border-style: solid;
+    border-color: #8AABBE;
+    border-width: 4px;
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+div.globalSHOWPOST div.nouveauCommentaire .btn{
+    margin-left: 90%;
+    margin-top: 10px;
+    text-align: center;
+    font-size: large;
+    background-color: #8AABBE;
+    width: fit-content;
+    color: white;
+}
+
+/* FIN DE POST */
+
+/* AJOUT DE POST */
+
+div.newPOST{
+    margin: 8% auto ;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+div.newPOST div.titreNewPOST{
+    width: 80%;
+    height: fit-content;
+    line-height: 60px;
+    text-align: center;
+    background-color: #e98553;
+    font-size: xx-large;
+}
+
+div.newPOST div.formPOST{
+    width: 80%;
+    background-color: #8AABBE;
+    
+}
+
+div.newPOST div.formPOST span{
+    text-align: left;
+    margin-left: 10%;
+    font-size: large;
+
+}
+
+div.newPOST div.formPOST textarea{
+    font-size: large;
+    margin-left: 10%;
+    width: 80%;
+    height: 300px;
+    resize: none;
+}
+
+label{
+    font-size: large;
+
+}
+
+div.newPOST div.formPOST input[type=text]{
+    font-size: large;
+    width: 63.5%;
+}
+
+div.newPOST div.formPOST input[type=textarea]{
+    font-size: large;
+    width: 63.5%;
+}
+
+div.newPOST div.formPOST button{
+    margin-left: 80%;
+    width: 12%;
+    font-size: large;
+}
+
+/* FIN AJOUT DE POST */
+
+/* PROFIL */
+
+div.profil{
+    margin: 8% auto ;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+div.monProfil{
+    width: 80%;
+    height: fit-content;
+    line-height: 60px;
+    text-align: center;
+    background-color: #e98553;
+    font-size: xx-large;
+}
+
+div.info{
+    margin: 0 auto;
+    min-width: 40%;
+    width: fit-content;
+    max-width: 100%;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    background-color: #8AABBE;
+    color: white;
+    font-size: x-large;
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 15px 15px 15px;
+}
+
+div.profil button{
+    width: 80px;
+    font-size: large;
+}
+
+/* FIN DE PROFIL */
+
+/* JDB INDEX */
+
+div.jdbIndex{
+    margin: 8% auto ;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+div.jdbIndex div.titreIndex{
+    width: 80%;
+    height: fit-content;
+    line-height: 60px;
+    text-align: center;
+    background-color: #e98553;
+    font-size: xx-large;
+    margin-bottom: 15px;
+}
+
+div.jdbIndex div.listeJDB{
+    width: 60%;
+    text-align: center;
+    font-size: x-large;
+    min-width: 60%;
+    min-width: fit-content;
+    min-height: fit-content;
+    line-height: 60px;
+    margin-bottom: 10px;
+    
+
+    background-color: #8AABBE;
+    color: white;
+
+    border-style: solid;
+    border-width: 1.5px;
+    border-color: gray;
+    border-radius: 15px 15px 15px;
+}
+
+div.nomEtJdb{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.jdbIndex div.listeJDB a{
+    display: block;
+}
+
+div.editEquipe{
+    background-color: #8AABBE;
+    font-size: large;
+    margin-bottom: 10px;
+    padding: 5px;
+    margin-left: 50%;
+}
+
+/* FIN JDB INDEX */
+
+/* AJOUT PERSONNE */
+
+div.globalAjout{
+    margin: 8% auto ;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+div.globalAjout div.titreAjout{
+    width: 100%;
+    height: fit-content;
+    line-height: 60px;
+    text-align: center;
+    background-color: #e98553;
+    font-size: xx-large;
+    margin-bottom: 15px;
+}
+
+
+div.globalAjout div.ajoutForm{
+    background-color: #8AABBE;
+    font-size: x-large;
+    padding: 5px;
+    width: 99%;
+    background-color: #8AABBE;
+    text-align: left;
+    font-weight: bold;
+}
+
+div.globalAjout div.ajoutForm input[type=text]{
+    width: 50%;
+}
+
+
+div.globalAjout div.ajoutForm label{
+    margin-left: 5%;
+}
+
+
+/* FIN AJOUT PERSONNE */ 

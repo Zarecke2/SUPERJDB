@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit JournalDeBord{% endblock %}
+
+{% block body %}
+    <h1>Edit JournalDeBord</h1>
+
+    {{ include('journal_de_bord/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('journal_de_bord_index') }}">back to list</a>
+
+    {{ include('journal_de_bord/_delete_form.html.twig') }}
+{% endblock %}

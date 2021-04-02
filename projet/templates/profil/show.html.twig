@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+    {% if 'ROLE_ETUDIANT' in app.user.roles %}
+        {% set nom, prenom, numEtudiant, login = app.user.nomEtudiant, app.user.prenomEtudiant, app.user.numEtudiant, app.user.login %}
+    {% else %}
+        {% set nom, prenom, numEtudiant, login = app.user.nomEnseignant, app.user.prenomEnseignant, false, app.user.login %}
+    {% endif %}
+    <div class="profil">
+        <div class="monProfil">
+            Mon profil
+        </div>
+        <br />
+        <div class="info">
+            {{ prenom }} {{ nom }} 
+        </div>
+        <br />
+
+        {% if numEtudiant != false %}
+        <div class="info">
+            Numéro étudiant : {{ numEtudiant }}
+        </div>
+        <br />
+        <div class="info">
+            Équipe : {{ app.user.equipeEtudiant }}
+        </div>
+        <br />
+        {% endif %}
+        <div class="info">
+            Mot de passe : <a href="{{ path('mdp') }}"><button>Modifier</button></a>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}

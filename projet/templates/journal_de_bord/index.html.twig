@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index des journaux de bords{% endblock %}
+
+{% block body %}
+
+    {% for m in app.flashes('access') %}
+		<script>
+		    function errorLoad() {
+		      alert("{{ m|e('js') }}");
+		    }
+	    </script>
+		<script>
+			errorLoad();
+		</script>
+	{% endfor %}
+    
+        <div class="jdbIndex">
+            <div class="titreIndex">
+                Journaux de bord
+            </div>
+        {% for jdb in journal_de_bords %}
+            <div class="listeJDB">
+                <a href="{{ path('journal_de_bord_show', {'id': jdb.id}) }}">
+                    {{ jdb.nomJournal }}
+                </a>
+            </div>
+        {% endfor %}
+
+        </div>
+        
+{% endblock %}

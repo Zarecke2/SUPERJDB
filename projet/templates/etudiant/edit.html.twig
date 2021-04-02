@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Etudiant{% endblock %}
+
+{% block body %}
+
+    <div class="globalAjout">
+        <div class="titreAjout">
+			Modifier l'étudiant
+		</div>
+        <div class="ajoutForm">
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+                <span class="test">{{ form_label(form.nom_etudiant) }} &ensp;&nbsp;&nbsp; {{ form_widget(form.nom_etudiant) }}</span>
+                <br /><br />
+
+                <span>{{ form_label(form.prenom_etudiant) }} {{ form_widget(form.prenom_etudiant) }} </span>
+                <br /><br />
+                
+                <span>{{ form_label(form.num_etudiant) }} {{ form_widget(form.num_etudiant) }} </span>
+                {{ form_widget(form) }}
+                <button style="margin-left:80%;">{{ button_label|default('Modifier') }}</button>
+		    {{ form_end(form) }}
+            <a href="{{ path('mdp', {'id': etudiant.id, 'nom': etudiant.nomEtudiant}) }}">
+                <button style="margin-left:5%;">
+                    Modifier le mot de passe
+                </button>
+            </a> 
+
+        </div>
+    </div>
+{% endblock %}

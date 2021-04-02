@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un étudiant{% endblock %}
+
+{% block body %}
+	<div class="globalAjout">
+		<div class="titreAjout">
+			Ajouter des étudiants
+		</div>
+		<div class="ajoutForm">
+		
+			{{ form_start(form) }}
+
+			<span class="test">{{ form_label(form.nom) }} &ensp;&nbsp; {{ form_widget(form.nom) }}</span>
+			<br /><br />
+
+			<span>{{ form_label(form.prenom) }} {{ form_widget(form.prenom) }} </span>
+			<br /><br />
+			
+			<span>{{ form_label(form.netud) }} {{ form_widget(form.netud) }} </span>
+			<br />
+			<small style="font-size:small;">{{ form_errors(form.netud) }}</small>
+			
+			{{ form_widget(form) }}
+				<button style="margin-left:80%;">{{ button_label|default('Ajouter') }}</button>
+			{{ form_end(form) }}
+	Ou :<br /><br />
+			{{ form_start(form2) }}
+			{{ form_label(form2.excel) }} {{ form_widget(form2.excel) }}
+			<small style="font-size:small;">{{ form_help(form2.excel) }}</small>
+			{{ form_widget(form2) }}
+				<button style="margin-left:80%;">{{ button_label|default('Ajouter') }}</button>
+			{{ form_end(form2) }}
+		</div>
+	</div>
+{% endblock %}

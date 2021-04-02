@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% for m in app.flashes('mdp') %}   
+        <script>
+		    function errorLoad() {
+		      alert("{{ m|e('js') }}");
+		    }
+	    </script>
+		<script>
+			errorLoad();
+		</script>
+    {% endfor %}
+    <div class="globalAjout">
+        <div class="titreAjout">
+            Modifier le mot de passe 
+        </div>
+        <div class="ajoutForm">
+	{{ form_start(form) }}
+    <i style="font-size:small;"> {{ form_errors(form.nouveau) }} </i>
+        {{ form_label(form.nouveau) }}  {{ form_widget(form.nouveau) }}
+        <br /><br />
+
+        <i style="font-size:small;"> {{ form_errors(form.confirmer) }} </i>
+        {{ form_label(form.confirmer) }}  {{ form_widget(form.confirmer) }}
+        {{ form_widget(form) }}
+	    <button style="margin-left:60%;">{{ button_label|default('Modifier') }}</button>
+	{{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
