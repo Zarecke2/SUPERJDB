@@ -27,6 +27,15 @@ class GlobalController extends AbstractController
         $this->user = $tokenStorage->getToken()->getUser();
     }
     /**
+     * @Route("/", name="redirect")
+     *  
+     */
+    public function accueil(): Response
+    {
+        return $this->redirectToRoute('login');;
+    }
+
+    /**
      * @Route("/admin", name="administrateur")
      * 
      * @IsGranted("ROLE_ADMINISTRATEUR")

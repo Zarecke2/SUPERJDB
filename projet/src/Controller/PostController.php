@@ -83,7 +83,8 @@ class PostController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
+                    echo $e;
+			die;// ... handle exception if something happens during file upload
                 }
 
                 $document->setDateDepot(time())
